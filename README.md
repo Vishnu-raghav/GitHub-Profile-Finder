@@ -24,6 +24,7 @@ How it works
 5. Shows error message if user is not found
 
 API Used
+
 GitHub Users API:
 https://api.github.com/users/{username}
 
