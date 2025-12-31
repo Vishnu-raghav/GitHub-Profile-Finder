@@ -14,39 +14,40 @@
 
     <!-- Search Section -->
     <div class="search-box">
-      <input type="text" placeholder="Enter GitHub username" />
-      <button>Search</button>
+      <input type="text" id="user-input" placeholder="Enter GitHub username" />
+      <button id="search">Search</button>
     </div>
 
     <!-- Profile Card -->
     <div class="profile-card">
-      <img src="https://via.placeholder.com/120" alt="Profile Avatar">
+      <img src="" id="profile-img" alt="Profile Avatar">
 
-      <h2>User Name</h2>
-      <p class="username">@username</p>
+      <h2 id="Name"></h2>
+      <p id="username"></p>
 
-      <p class="bio">
-        This is a sample bio. User bio will appear here.
+      <p id="bio">
+       
       </p>
 
       <div class="stats">
         <div>
           <span>Repos</span>
-          <strong>0</strong>
+          <strong id="repos"></strong>
         </div>
         <div>
           <span>Followers</span>
-          <strong>0</strong>
+          <strong id="followers">0</strong>
         </div>
         <div>
           <span>Following</span>
-          <strong>0</strong>
+          <strong id="following"></strong>
         </div>
       </div>
 
-      <a href="#" class="profile-link">View GitHub Profile</a>
+      <a href="#" target="_blank" id="profile-link">View GitHub Profile</a>
     </div>
   </div>
 
 </body>
+<script src="script.js"></script>
 </html>
