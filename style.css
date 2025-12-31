@@ -70,6 +70,10 @@ h1 {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
+.hidden{
+  display: none;
+}
+
 .profile-card img {
   width: 120px;
   height: 120px;
