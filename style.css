@@ -31,7 +31,7 @@ h1 {
   margin-bottom: 20px;
 }
 
-/* Search box */
+
 .search-box {
   display: flex;
   gap: 10px;
@@ -61,8 +61,16 @@ h1 {
 .search-box button:hover {
   background: #1d4ed8;
 }
+#error {
+  background: #7f1d1d;
+  color: #fecaca;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
 
-/* Profile Card */
+
 .profile-card {
   background: #1f2937;
   padding: 20px;
@@ -98,7 +106,7 @@ h1 {
   margin-bottom: 20px;
 }
 
-/* Stats */
+
 .stats {
   display: flex;
   justify-content: space-between;
@@ -123,7 +131,7 @@ h1 {
   font-size: 16px;
 }
 
-/* Profile link */
+
 .profile-link {
   display: inline-block;
   margin-top: 10px;

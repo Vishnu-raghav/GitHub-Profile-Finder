@@ -12,6 +12,7 @@ const Username = document.getElementById("Name");
 const userBio = document.getElementById("bio");
 const loader = document.getElementById("loader");
 const profile = document.querySelector(".profile-card");
+const errorBox = document.getElementById("error")
 
 async function serachUser(username) {
   try {
@@ -23,6 +24,16 @@ async function serachUser(username) {
   }
 }
 
+function showError(message) {
+  errorBox.innerText = message;
+  errorBox.classList.remove("hidden");
+}
+
+
+function hideError() {
+  errorBox.classList.add("hidden");
+}
+
 
 searchBtn.addEventListener("click", async () => {
   const name = UserInput.value.trim();
@@ -32,7 +43,7 @@ searchBtn.addEventListener("click", async () => {
     return;
   }
 
-  
+  hideError()
   loader.classList.remove("hidden");
   profile.classList.add("hidden");
 
@@ -41,8 +52,9 @@ searchBtn.addEventListener("click", async () => {
 
     loader.classList.add("hidden"); 
 
+
     if (status === 404 || data.message === "Not Found") {
-      alert("User not found");
+      showError("User Not Found")
       return;
     }
 
