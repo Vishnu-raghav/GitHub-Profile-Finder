@@ -14,6 +14,8 @@ const loader = document.getElementById("loader");
 const profileLayout = document.querySelector(".profile-layout");
 const errorBox = document.getElementById("error")
 
+const repoLayout = document.querySelector(".repos-list")
+
 
 
 let lastSearchedUser = "";
@@ -22,7 +24,6 @@ async function serachUser(username) {
   try {
     const res = await fetch(`${api}/${username}`);
     const data = await res.json();
-    console.log(data)
     return { status: res.status, data }; 
   } catch (error) {
     throw error; 
@@ -47,14 +48,51 @@ try {
   
   const res = await fetch(`${api}/${username}/repos`);
   const data = await res.json()
-  
-  console.log(data)
-  
+    
   return data
 } catch (error) {
   console.log("error")
 }
 }
+
+
+async function fillRepoData(User) {
+ repoLayout.innerHTML = ""
+
+  try {
+    const data = await getRepos(User)
+
+    if (data.length === 0) {
+      repoLayout.innerHTML = "<p>No public repositories</p>"
+    }
+
+    data
+     .sort((a, b) => b.stargazers_count - a.stargazers_count)
+     .slice(0, 4)
+     .forEach((repo) => {
+      console.log("repo",repo)
+       const repoCard = document.createElement("div")
+       repoCard.setAttribute("class","repo-card")
+       repoCard.innerHTML = `
+       <div class="repo-header">
+          <a href="${repo.html_url}" class="repo-name" target="_blank">${repo.name}</a>
+          <span class="repo-stars">⭐ ${repo.stargazers_count}</span>
+        </div>
+        <p class="repo-desc">
+         ${repo.description || "No description"}
+        </p>
+       `
+       repoLayout.appendChild(repoCard)
+      
+    })
+  } catch (error) {
+    throw error
+  }
+}
+
+
+
+
 
 
 
@@ -76,9 +114,13 @@ searchBtn.addEventListener("click", async () => {
   loader.classList.remove("hidden");
   profileLayout.classList.add("hidden");
 
+
   try {
     const { status, data } = await serachUser(name);
-
+    
+    if (status !== 404) {
+       fillRepoData(name)
+    }
     loader.classList.add("hidden"); 
 
 
@@ -105,11 +147,7 @@ searchBtn.addEventListener("click", async () => {
   }
 
 
-  try{
+ 
 
-    const data = await getRepos(name)
-    
-  } catch(error){
 
-  }
 });
