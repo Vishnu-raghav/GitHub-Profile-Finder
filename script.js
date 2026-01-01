@@ -14,6 +14,8 @@ const loader = document.getElementById("loader");
 const profile = document.querySelector(".profile-card");
 const errorBox = document.getElementById("error")
 
+let lastSearchedUser = "";
+
 async function serachUser(username) {
   try {
     const res = await fetch(`${api}/${username}`);
@@ -43,6 +45,11 @@ searchBtn.addEventListener("click", async () => {
     return;
   }
 
+  if (name.toLowerCase() === lastSearchedUser.toLowerCase()) {
+    return; 
+  }
+
+  lastSearchedUser = name
   hideError()
   loader.classList.remove("hidden");
   profile.classList.add("hidden");
@@ -58,6 +65,7 @@ searchBtn.addEventListener("click", async () => {
       return;
     }
 
+
     profile.classList.remove("hidden");
     userName.innerText = data.login;
     userRepo.innerText = data.public_repos;
@@ -70,7 +78,7 @@ searchBtn.addEventListener("click", async () => {
     userBio.innerText = data.bio || "No Bio available";
   } catch (error) {
     loader.classList.add("hidden");
-    alert("Network error! Please try again.");
     console.log("ERROR:", error);
+    showError("Network error");
   }
 });
