@@ -92,35 +92,47 @@ h1 {
   display: none;
 }
 
-.profile-card img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 4px solid #2563eb;
+.profile-link {
+  display: block;
+  text-align: center;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
   margin-bottom: 12px;
 }
 
-.profile-card h2 {
-  font-size: 20px;
+.profile-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #2563eb;
 }
 
-.username {
+
+.profile-info h2 {
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+#username {
   font-size: 14px;
   color: #9ca3af;
-  margin-bottom: 10px;
 }
 
 .bio {
   font-size: 14px;
   color: #d1d5db;
-  margin-bottom: 20px;
+  margin: 12px 0 18px;
+  line-height: 1.4;
 }
-
 
 .stats {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .stats div {
@@ -157,6 +169,72 @@ h1 {
   background: #1d4ed8;
 }
 
+/* Repositories Section */
+.repos-section {
+  margin-top: 20px;
+  background: #1f2937;
+  padding: 16px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  text-align: left;
+}
+
+.repos-title {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #e5e7eb;
+}
+
+/* Repo List */
+.repos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Single Repo Card */
+.repo-card {
+  background: #111827;
+  padding: 12px;
+  border-radius: 10px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.repo-card:hover {
+  transform: translateY(-2px);
+  background: #0f172a;
+}
+
+/* Repo Header */
+.repo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.repo-name {
+  font-size: 14px;
+  font-weight: bold;
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+.repo-name:hover {
+  text-decoration: underline;
+}
+
+.repo-stars {
+  font-size: 13px;
+  color: #facc15;
+}
+
+/* Repo Description */
+.repo-desc {
+  font-size: 13px;
+  color: #9ca3af;
+  line-height: 1.4;
+}
 
 
 @keyframes spin {

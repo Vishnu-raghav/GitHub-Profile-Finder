@@ -14,12 +14,15 @@ const loader = document.getElementById("loader");
 const profile = document.querySelector(".profile-card");
 const errorBox = document.getElementById("error")
 
+
+
 let lastSearchedUser = "";
 
 async function serachUser(username) {
   try {
     const res = await fetch(`${api}/${username}`);
     const data = await res.json();
+    console.log(data)
     return { status: res.status, data }; 
   } catch (error) {
     throw error; 
@@ -33,11 +36,31 @@ function showError(message) {
 
 
 function hideError() {
-  errorBox.classList.add("hidden");
+  setTimeout(() => {
+    errorBox.classList.add("hidden");
+  }, 2000);
 }
 
 
-searchBtn.addEventListener("click", async () => {
+async function getRepos (username){
+try {
+  
+  const res = await fetch(`${api}/${username}/repos`);
+  const data = await res.json()
+  
+  console.log(data)
+  
+  return data
+} catch (error) {
+  console.log("error")
+}
+}
+
+
+
+
+searchBtn.addEventListener("click", async (e) => {
+  if (e.key === "Enter") searchBtn.click();
   const name = UserInput.value.trim();
 
   if (name === "") {
@@ -80,5 +103,14 @@ searchBtn.addEventListener("click", async () => {
     loader.classList.add("hidden");
     console.log("ERROR:", error);
     showError("Network error");
+  }
+
+
+  try{
+
+    const data = await getRepos(name)
+    
+  } catch(error){
+
   }
 });
