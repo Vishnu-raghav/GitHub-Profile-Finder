@@ -22,66 +22,65 @@
 
     <div id="error" class=" hidden"></div>
 
+<div class="profile-layout hidden">
 
-    <!-- Profile Card -->
-    <div class="profile-card hidden">
+  <!-- LEFT: Profile Card -->
+  <div class="profile-card">
 
-  <!-- Header -->
-  <div class="profile-header">
-    <img src="" id="profile-img" alt="Profile Avatar">
+    <div class="profile-header">
+      <img src="" id="profile-img" alt="Profile Avatar">
 
-    <div class="profile-info">
-      <h2 id="Name"></h2>
-      <p id="username"></p>
-    </div>
-  </div>
-
-  <!-- Bio -->
-  <p id="bio" class="bio"></p>
-
-  <!-- Stats -->
-  <div class="stats">
-    <div>
-      <span>Repos</span>
-      <strong id="repos"></strong>
-    </div>
-    <div>
-      <span>Followers</span>
-      <strong id="followers"></strong>
-    </div>
-    <div>
-      <span>Following</span>
-      <strong id="following"></strong>
-    </div>
-  </div>
-
-  <!-- Action -->
-  <a href="#" target="_blank" id="profile-link" class="profile-link">
-    View GitHub Profile
-  </a>
-</div>
-
-<!-- Repositories Section -->
-<div class="repos-section hidden">
-
-  <h3 class="repos-title">Top Repositories</h3>
-
-  <div class="repos-list">
-
-    <!-- Single Repo Item -->
-    <div class="repo-card">
-      <div class="repo-header">
-        <a href="#" target="_blank" class="repo-name">github-profile-finder</a>
-        <span class="repo-stars">⭐ 120</span>
+      <div class="profile-info">
+        <h2 id="Name"></h2>
+        <p id="username"></p>
       </div>
-      <p class="repo-desc">
-        A simple app to search GitHub profiles using GitHub API.
-      </p>
     </div>
 
+    <p id="bio" class="bio"></p>
+
+    <div class="stats">
+      <div>
+        <span>Repos</span>
+        <strong id="repos"></strong>
+      </div>
+      <div>
+        <span>Followers</span>
+        <strong id="followers"></strong>
+      </div>
+      <div>
+        <span>Following</span>
+        <strong id="following"></strong>
+      </div>
+    </div>
+
+    <a href="#" target="_blank" id="profile-link" class="profile-link">
+      View GitHub Profile
+    </a>
+
+  </div>
+
+  <!-- RIGHT: Repositories -->
+  <div class="repos-section">
+
+    <h3 class="repos-title">Top Repositories</h3>
+
+    <div class="repos-list">
+
+      <div class="repo-card">
+        <div class="repo-header">
+          <a href="#" class="repo-name">github-profile-finder</a>
+          <span class="repo-stars">⭐ 120</span>
+        </div>
+        <p class="repo-desc">
+          A simple app to search GitHub profiles using GitHub API.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
 
 </div>
-
 </body>
 <script src="script.js"></script>
 </html>

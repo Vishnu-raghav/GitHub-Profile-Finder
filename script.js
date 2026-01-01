@@ -11,7 +11,7 @@ const userImg = document.getElementById("profile-img");
 const Username = document.getElementById("Name");
 const userBio = document.getElementById("bio");
 const loader = document.getElementById("loader");
-const profile = document.querySelector(".profile-card");
+const profileLayout = document.querySelector(".profile-layout");
 const errorBox = document.getElementById("error")
 
 
@@ -59,8 +59,7 @@ try {
 
 
 
-searchBtn.addEventListener("click", async (e) => {
-  if (e.key === "Enter") searchBtn.click();
+searchBtn.addEventListener("click", async () => {
   const name = UserInput.value.trim();
 
   if (name === "") {
@@ -75,7 +74,7 @@ searchBtn.addEventListener("click", async (e) => {
   lastSearchedUser = name
   hideError()
   loader.classList.remove("hidden");
-  profile.classList.add("hidden");
+  profileLayout.classList.add("hidden");
 
   try {
     const { status, data } = await serachUser(name);
@@ -89,7 +88,7 @@ searchBtn.addEventListener("click", async (e) => {
     }
 
 
-    profile.classList.remove("hidden");
+    profileLayout.classList.remove("hidden");
     userName.innerText = data.login;
     userRepo.innerText = data.public_repos;
     userFollowers.innerText = data.followers;
