@@ -41,55 +41,22 @@ github-profile-finder/
 
 ---
 
-## ⚙️ How It Works
 
-1. User enters a GitHub username in the search box  
-2. Clicks the **Search** button (or presses Enter)  
-3. App sends a request to GitHub Users API  
-4. If user exists:
-   - Profile data is displayed
-   - Top 4 repositories are fetched and shown
-5. If user does not exist:
-   - A clear error message is shown  
-    
-<<<<<<< HEAD
-=======
----
-
-## 🌐 API Endpoints Used
+🌐 API Endpoints Used
 
 GET https://api.github.com/users/{username}
 GET https://api.github.com/users/{username}/repos
-
-
-Key Implementation Highlights
-Duplicate Search Prevention
-
-if (name.toLowerCase() === lastSearchedUser.toLowerCase()) {
-  return;
-}
-lastSearchedUser = name;
-
-Top Repositories Logic
-data
-  .sort((a, b) => b.stargazers_count - a.stargazers_count)
-  .slice(0, 4);
-
->>>>>>> 09d499a53d48cdec57f07c8909ee73c91afba12b
 
 📱 Responsive Design
 
 The application is fully responsive and adapts smoothly across all screen sizes:
 
 📱 Mobile devices
-
 📲 Tablets
-
 💻 Laptops
-
 🖥️ Large desktop screens
-
 Implemented using CSS Grid, Flexbox, and media queries.
+
 
 🔧 Installation & Usage
 Run Locally
@@ -117,11 +84,6 @@ No build tools or dependencies required.
 Vishnu
 🔗 Portfolio: https://vishnuraghav.vercel.app/
 
-
-⭐ Support
-
-If you like this project, consider giving it a ⭐ on GitHub.
-Feedback and contributions are always welcome!
 
 
 
