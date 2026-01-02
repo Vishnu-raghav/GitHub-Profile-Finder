@@ -60,12 +60,15 @@ GET https://api.github.com/users/{username}/repos
 ##  Responsive Design
 
 The application is fully responsive and adapts smoothly across all screen sizes:
-```
+
 📱 Mobile devices
+
 📲 Tablets 
+
 💻 Laptops 
+
 🖥️ Large desktop 
-```
+
 screens Implemented using CSS Grid, Flexbox, and media queries.
 
 
