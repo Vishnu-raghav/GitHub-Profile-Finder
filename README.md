@@ -56,7 +56,6 @@ github-profile-finder/
 
 ## 🌐 API Endpoints Used
 
-```http
 GET https://api.github.com/users/{username}
 GET https://api.github.com/users/{username}/repos
 
@@ -117,6 +116,5 @@ Vishnu
 If you like this project, consider giving it a ⭐ on GitHub.
 Feedback and contributions are always welcome!
 
----
 
 
