@@ -52,38 +52,20 @@ github-profile-finder/
 5. If user does not exist:
    - A clear error message is shown  
     
----
-
-## 🌐 API Endpoints Used
-
-```http
-GET https://api.github.com/users/{username}
-GET https://api.github.com/users/{username}/repos
-
-
-Key Implementation Highlights
-Duplicate Search Prevention
-
-if (name.toLowerCase() === lastSearchedUser.toLowerCase()) {
-  return;
-}
-lastSearchedUser = name;
-
-Top Repositories Logic
-data
-  .sort((a, b) => b.stargazers_count - a.stargazers_count)
-  .slice(0, 4);
-
 
 📱 Responsive Design
 
-The application is fully responsive and adapts smoothly across:
-Mobile devices
-Tablets
-Laptops
-Large desktop screens
-Implemented using CSS Grid, Flexbox, and media queries.
+The application is fully responsive and adapts smoothly across all screen sizes:
 
+📱 Mobile devices
+
+📲 Tablets
+
+💻 Laptops
+
+🖥️ Large desktop screens
+
+Implemented using CSS Grid, Flexbox, and media queries.
 
 🔧 Installation & Usage
 Run Locally
