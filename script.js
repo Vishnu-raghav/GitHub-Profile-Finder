@@ -13,10 +13,7 @@ const userBio = document.getElementById("bio");
 const loader = document.getElementById("loader");
 const profileLayout = document.querySelector(".profile-layout");
 const errorBox = document.getElementById("error")
-
 const repoLayout = document.querySelector(".repos-list")
-
-
 
 let lastSearchedUser = "";
 
@@ -35,13 +32,11 @@ function showError(message) {
   errorBox.classList.remove("hidden");
 }
 
-
 function hideError() {
   setTimeout(() => {
     errorBox.classList.add("hidden");
   }, 2000);
 }
-
 
 async function getRepos (username){
 try {
@@ -54,7 +49,6 @@ try {
   console.log("error")
 }
 }
-
 
 async function fillRepoData(User) {
  repoLayout.innerHTML = ""
@@ -70,7 +64,6 @@ async function fillRepoData(User) {
      .sort((a, b) => b.stargazers_count - a.stargazers_count)
      .slice(0, 4)
      .forEach((repo) => {
-      console.log("repo",repo)
        const repoCard = document.createElement("div")
        repoCard.setAttribute("class","repo-card")
        repoCard.innerHTML = `
@@ -90,13 +83,6 @@ async function fillRepoData(User) {
   }
 }
 
-
-
-
-
-
-
-
 searchBtn.addEventListener("click", async () => {
   const name = UserInput.value.trim();
 
@@ -114,7 +100,6 @@ searchBtn.addEventListener("click", async () => {
   loader.classList.remove("hidden");
   profileLayout.classList.add("hidden");
 
-
   try {
     const { status, data } = await serachUser(name);
     
@@ -123,12 +108,10 @@ searchBtn.addEventListener("click", async () => {
     }
     loader.classList.add("hidden"); 
 
-
     if (status === 404 || data.message === "Not Found") {
       showError("User Not Found")
       return;
     }
-
 
     profileLayout.classList.remove("hidden");
     userName.innerText = data.login;
@@ -145,9 +128,4 @@ searchBtn.addEventListener("click", async () => {
     console.log("ERROR:", error);
     showError("Network error");
   }
-
-
- 
-
-
 });

@@ -5,82 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GitHub Profile Finder</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+  <div class="wrapper">
+    <div class="container">
+      <h1><i class="fab fa-github"></i> GitHub Profile Finder</h1>
+      <p class="subtitle">Search any GitHub user and view their profile</p>
 
-  <div class="container">
-    <h1>GitHub Profile Finder</h1>
-    <p class="subtitle">Search any GitHub user and view their profile</p>
-
-    <!-- Search Section -->
-    <div class="search-box">
-      <input type="text" id="user-input" placeholder="Enter GitHub username" />
-      <button id="search">Search</button>
-    </div>
-
-    <div id="loader" class="loader hidden"></div>
-
-    <div id="error" class=" hidden"></div>
-
-<div class="profile-layout hidden">
-
-  <!-- LEFT: Profile Card -->
-  <div class="profile-card">
-
-    <div class="profile-header">
-      <img src="" id="profile-img" alt="Profile Avatar">
-
-      <div class="profile-info">
-        <h2 id="Name"></h2>
-        <p id="username"></p>
-      </div>
-    </div>
-
-    <p id="bio" class="bio"></p>
-
-    <div class="stats">
-      <div>
-        <span>Repos</span>
-        <strong id="repos"></strong>
-      </div>
-      <div>
-        <span>Followers</span>
-        <strong id="followers"></strong>
-      </div>
-      <div>
-        <span>Following</span>
-        <strong id="following"></strong>
-      </div>
-    </div>
-
-    <a href="#" target="_blank" id="profile-link" class="profile-link">
-      View GitHub Profile
-    </a>
-
-  </div>
-
-  <!-- RIGHT: Repositories -->
-  <div class="repos-section">
-
-    <h3 class="repos-title">Top 4 Repositories</h3>
-
-    <div class="repos-list">
-
-      <!-- <div class="repo-card">
-        <div class="repo-header">
-          <a href="#" class="repo-name"></a>
-          <span class="repo-stars">⭐ 120</span>
+      <div class="search-box">
+        <div class="input-wrapper">
+          <i class="fas fa-search"></i>
+          <input type="text" id="user-input" placeholder="Enter GitHub username" />
         </div>
-        <p class="repo-desc">
-          A simple app to search GitHub profiles using GitHub API.
+        <button id="search" class="search-btn">Search</button>
+      </div>
+
+      <div id="loader" class="loader hidden"></div>
+
+      <div id="error" class="hidden"></div>
+
+      <div class="profile-layout hidden">
+        <div class="profile-card">
+          <div class="profile-header">
+            <img src="" id="profile-img" alt="Profile Avatar">
+            <div class="profile-info">
+              <h2 id="Name"></h2>
+              <p id="username"></p>
+            </div>
+          </div>
+
+          <p id="bio" class="bio"></p>
+
+          <div class="stats">
+            <div>
+              <span>Repos</span>
+              <strong id="repos"></strong>
+            </div>
+            <div>
+              <span>Followers</span>
+              <strong id="followers"></strong>
+            </div>
+            <div>
+              <span>Following</span>
+              <strong id="following"></strong>
+            </div>
+          </div>
+
+          <a href="#" target="_blank" id="profile-link" class="profile-link">
+            <i class="fab fa-github"></i> View GitHub Profile
+          </a>
+        </div>
+
+        <div class="repos-section">
+          <h3 class="repos-title"><i class="fas fa-code-branch"></i> Top 4 Repositories</h3>
+          <div class="repos-list"></div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <p>
+          GitHub Profile Finder Designed & Developed by
+          <a href="https://vishnuraghav.vercel.app/" target="_blank" class="footer-link">
+            Vishnu
+          </a>
         </p>
-      </div> -->
-
+      </footer>
     </div>
-
   </div>
-
-</div>
+  
+  <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 </html>
