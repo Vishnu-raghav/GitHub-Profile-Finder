@@ -52,6 +52,30 @@ github-profile-finder/
 5. If user does not exist:
    - A clear error message is shown  
     
+<<<<<<< HEAD
+=======
+---
+
+## 🌐 API Endpoints Used
+
+GET https://api.github.com/users/{username}
+GET https://api.github.com/users/{username}/repos
+
+
+Key Implementation Highlights
+Duplicate Search Prevention
+
+if (name.toLowerCase() === lastSearchedUser.toLowerCase()) {
+  return;
+}
+lastSearchedUser = name;
+
+Top Repositories Logic
+data
+  .sort((a, b) => b.stargazers_count - a.stargazers_count)
+  .slice(0, 4);
+
+>>>>>>> 09d499a53d48cdec57f07c8909ee73c91afba12b
 
 📱 Responsive Design
 
@@ -99,6 +123,5 @@ Vishnu
 If you like this project, consider giving it a ⭐ on GitHub.
 Feedback and contributions are always welcome!
 
----
 
 
